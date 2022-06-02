@@ -1,0 +1,37 @@
+{
+    "name":"Project PWA HotHotHot",
+
+    "short_name": "HotHotHot",
+
+    "description": "Project ",
+
+	"start_url": "/HotHotHot/index.html",
+
+    "display": "fullscreen",
+
+    "icons": [
+
+      {
+
+        "src": "images/rubik-256x256.png",
+
+        "sizes": "256x256",
+
+        "type": "image/png"
+
+      },
+
+      {
+
+        "src": "images/rubik-128x128.png",
+
+        "sizes": "128x128",
+
+        "type": "image/png"
+
+      }
+
+    ],
+
+	"background_color": "grey"
+}
