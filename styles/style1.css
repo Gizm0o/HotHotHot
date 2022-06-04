@@ -131,6 +131,24 @@ button{
     0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+#notifications{
+    position: relative;
+    display: inline-block;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    width: 50%;
+    color: #5533ff;
+    box-shadow: -20px 3px 6px rgba(0, 0, 0, 0.16), 
+    0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
 button::before{
     content: "";
     position: absolute;

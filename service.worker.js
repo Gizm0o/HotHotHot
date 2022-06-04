@@ -1,55 +1,83 @@
-/*
 
-* Attention : CacheStorage != LocalStorage
-
-*
-
-* Il faut définir ici au moins un écouteur d'événement sur 'install' et
-
-* un écouteur d'événement sur 'fetch'
-
-*
-
-*/
+var CACHE = 'hotcache';  
 
 
 
-// Lors de l'installation de la PWA, charger les ressources puis les mettre en cache
+// On install, cache some resource.  
+self.addEventListener('install', function(evt) {  
+  evt.waitUntil(caches.open(CACHE).then(function (cache) {  
+	        cache.addAll([  
+	          "/index.html",  
+			  "/img/favicon-16x16.png",  
+			  "/img/favicon-32x32.png",  
+			  "/img/android-chrome-192x192.png",  
+			  "/img/android-chrome-512x512.png",  
+        "/scripts/main.js",
+        "/styles/main.css",
+			  "/service.worker.js",  
+	  ]);  
+  }));  
+});
 
-self.addEventListener('install', (e) => {
+// On fetch, use cache but update the entry with the latest contents  
+// from the server.  
+self.addEventListener('fetch', function(evt) {  
+  console.log('The service worker is serving the asset.');  
+  // You can use `respondWith()` to answer ASAP...  
+  evt.respondWith(fromCache(evt.request));  
+  // ...and `waitUntil()` to prevent the worker to be killed until  
+ // the cache is updated.
+  evt.waitUntil(  
+      update(evt.request)  
+          // Finally, send a message to the client to inform it about the  
+      // resource is up to date.
+      .then(refresh)  
+  );  
+});  
 
-    e.waitUntil(
-  
-      caches.open('HotHotHot').then((cache) => cache.addAll([
-  
-          "index.html",
-  
-          "scripts/main.js",
-  
-          "service.worker.js",
-  
-          // ... ajouter les autres ressources à mettre en cache
-  
-      ])), // à adapter à l'URL du projet
-  
-    );
-  
-  });
-  
-  
-  
-  // Stratégie "Cache, falling back to network"
-  
-  // => d'abord vérifier si la ressource n'est pas dans le cache pour la récupérer (offline)
-  
-  // sinon, récupérer depuis le serveur en ligne (online)
-  
-  self.addEventListener('fetch', (e) => {
-  
-    e.respondWith(
-  
-      caches.match(e.request).then((response) => response || fetch(e.request)),
-  
-    );
-  
-  });
+// Open the cache where the assets were stored and search for the requested  
+// resource. Notice that in case of no matching, the promise still resolves  
+// but it does with `undefined` as value.  
+function fromCache(request) {  
+  console.log('match cache request');  
+return caches.open(CACHE).then(function (cache) {  
+      return cache.match(request);  
+ });  
+}  
+
+
+// Update consists in opening the cache, performing a network request and  
+// storing the new response data.  
+function update(request) {  
+  console.log('update cache');  
+return caches.open(CACHE).then(function (cache) {  
+      return fetch(request).then(function (response) {  
+          return cache.put(request, response.clone()).then(function () {  
+              return response;  
+      });  
+   });  
+});  
+}  
+
+// Sends a message to the clients.  
+function refresh(response) {  
+
+  return self.clients.matchAll().then(function (clients) {  
+      clients.forEach(function (client) {  
+      // Encode which resource has been updated. By including the  
+    // [ETag](https://en.wikipedia.org/wiki/HTTP_ETag) the client can 
+    // check if the content has changed. 
+    
+       var message = {  
+              type: 'refresh',  
+      url: response.url,  
+      // Notice not all servers return the ETag header. If this is not  
+      // provided you should use other cache headers or rely on your own 
+      // means to check if the content has changed.
+        eTag: response.headers.get('ETag')  
+          };  
+    // Tell the client about the update.  
+      client.postMessage(JSON.stringify(message));  
+  });  
+});  
+}
