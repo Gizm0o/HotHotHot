@@ -46,7 +46,7 @@ socket.onopen = function(event) {
                         T_temperatures.push(value2.type);
                     }
                 }
-            }
+            } //test
         
             console.log(A_temperatures);
             console.log(Name_temperatures);
