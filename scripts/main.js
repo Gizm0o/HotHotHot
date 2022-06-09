@@ -32,7 +32,6 @@ socket.onopen = function(event) {
         var A_temperatures = [];
         var Name_temperatures = [];
         var T_temperatures = [];
-        var json = JSON.parse(event.data);
         for(var i = 0; i < json.length; i++){
             A_temperatures.push(json[i].A);
             Name_temperatures.push(json[i].Name);
@@ -54,11 +53,10 @@ socket.onopen = function(event) {
                         A_temperatures.push(value2.Valeur);
                         Name_temperatures.push(value2.Nom);
                         T_temperatures.push(value2.type);
-                        addRowJson(value2);
+                        addToJson(value2);
                     }
                 }
             } //test
-        
             console.log(A_temperatures);
             console.log(Name_temperatures);
             console.log(T_temperatures);
@@ -252,6 +250,32 @@ function addRowJson(data){
 }
 
     
-
+function addToJson(data){
+    if(data.Nom == "Interieur"){
+        var obj = {
+            temperature_interior:[]
+        }
+        obj.temperature_interior.push({date: data.Date, temperature: data.Valeur})
+        }
+    else{
+        var obj = {
+            temperature_exterior:[]
+        }
+        obj.temperature_exterior.push({date: data.Date, temperature: data.Valeur})
+    }
+    var json = JSON.stringify(obj);
+    var fs = require('fs');
+    fs.writeFile('historique.json', json, 'utf8', callback);
+    fs.readFile('historique.json', 'utf8', function readFileCallback(err, data){
+        if (err){
+            console.log(err);
+        } else {
+        obj = JSON.parse(data); //now it an object
+        obj.table.push({id: 2, square:3}); //add some data
+        json = JSON.stringify(obj); //convert it back to json
+        console.log(json); //see the output
+        fs.writeFile('historique.json', json, 'utf8', callback); // write it back 
+    }});
+}
 
 
