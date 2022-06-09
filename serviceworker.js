@@ -9,7 +9,7 @@ self.addEventListener('install', function(evt) {
 	        cache.addAll([  
 	          "/index.html", 
         "/scripts/main.js",
-        "/styles/main.css",
+        "/styles/style1.css",
 			  "/serviceworker.js",  
 	  ]);  
   }));  
