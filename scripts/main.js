@@ -168,7 +168,7 @@ function randomNotification() {
 
             var notifTitle = "Chaud, non ?";
             var notifBody = 'Température : ' + randomNumber + '.';
-            var notifImg = '/assets/images/android-chrome-192x192.png';
+            var notifImg = '/img/logo_maison.png';
             var options = {
                 body: notifBody,
                 icon: notifImg
