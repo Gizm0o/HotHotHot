@@ -32,11 +32,6 @@ socket.onopen = function(event) {
         var A_temperatures = [];
         var Name_temperatures = [];
         var T_temperatures = [];
-        for(var i = 0; i < json.length; i++){
-            A_temperatures.push(json[i].A);
-            Name_temperatures.push(json[i].Name);
-            T_temperatures.push(json[i].T);
-        }
         console.log(A_temperatures);
         console.log(Name_temperatures);
         console.log(T_temperatures);
