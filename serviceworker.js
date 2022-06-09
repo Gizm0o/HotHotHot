@@ -7,14 +7,10 @@ var CACHE = 'hotcache';
 self.addEventListener('install', function(evt) {  
   evt.waitUntil(caches.open(CACHE).then(function (cache) {  
 	        cache.addAll([  
-	          "/index.html",  
-			  "/img/favicon-16x16.png",  
-			  "/img/favicon-32x32.png",  
-			  "/img/android-chrome-192x192.png",  
-			  "/img/android-chrome-512x512.png",  
+	          "/index.html", 
         "/scripts/main.js",
-        "/styles/main.css",
-			  "/service.worker.js",  
+        "/styles/style1.css",
+			  "/serviceworker.js",  
 	  ]);  
   }));  
 });

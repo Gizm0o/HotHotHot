@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator){
     navigator.serviceWorker
-     .register('/service.worker.js')
+     .register('/serviceworker.js')
      .then(() => {console.log('Service Worker Registered'); 
     }).catch(err => {
         console.log('Service Worker Failed to Register', err);
@@ -187,7 +187,7 @@ function randomNotification() {
 
             var notifTitle = "Chaud, non ?";
             var notifBody = 'Température : ' + randomNumber + '.';
-            var notifImg = '/assets/images/android-chrome-192x192.png';
+            var notifImg = '/img/logo_maison.png';
             var options = {
                 body: notifBody,
                 icon: notifImg
