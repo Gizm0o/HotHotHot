@@ -32,7 +32,6 @@ socket.onopen = function(event) {
         var A_temperatures = [];
         var Name_temperatures = [];
         var T_temperatures = [];
-        var fs =require('fs');
         var json = JSON.parse(event.data);
         for(var i = 0; i < json.length; i++){
             A_temperatures.push(json[i].A);
@@ -42,14 +41,6 @@ socket.onopen = function(event) {
         console.log(A_temperatures);
         console.log(Name_temperatures);
         console.log(T_temperatures);
-        fs.writeFileSync('temperatures.json', JSON.stringify(A_temperatures));
-        fs.writeFileSync('name_temperatures.json', JSON.stringify(Name_temperatures));
-        fs.writeFileSync('t_temperatures.json', JSON.stringify(T_temperatures));
-        console.log("Fichier créé");
-        console.log(fs.readFileSync('temperatures.json'));
-        console.log(fs.readFileSync('name_temperatures.json'));
-        console.log(fs.readFileSync('t_temperatures.json'));
-        console.log("Fichier lu");
         var object2 = JSON.parse(event.data);
         (function() {
             
