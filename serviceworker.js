@@ -14,7 +14,7 @@ self.addEventListener('install', function(evt) {
 			  "/img/android-chrome-512x512.png",  
         "/scripts/main.js",
         "/styles/main.css",
-			  "/service.worker.js",  
+			  "/serviceworker.js",  
 	  ]);  
   }));  
 });
