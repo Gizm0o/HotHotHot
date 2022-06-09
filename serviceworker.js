@@ -8,6 +8,7 @@ self.addEventListener('install', function(evt) {
   evt.waitUntil(caches.open(CACHE).then(function (cache) {  
 	        cache.addAll([  
 	          "/index.html", 
+            "/img/Logo_Hot.svg",
         "/scripts/main.js",
         "/styles/style1.css",
 			  "/serviceworker.js",  
