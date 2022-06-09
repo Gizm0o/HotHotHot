@@ -32,6 +32,15 @@ socket.onopen = function(event) {
         var A_temperatures = [];
         var Name_temperatures = [];
         var T_temperatures = [];
+        var json = JSON.parse(event.data);
+        for(var i = 0; i < json.length; i++){
+            A_temperatures.push(json[i].A);
+            Name_temperatures.push(json[i].Name);
+            T_temperatures.push(json[i].T);
+        }
+        console.log(A_temperatures);
+        console.log(Name_temperatures);
+        console.log(T_temperatures);
         var object2 = JSON.parse(event.data);
         
         (function() {
@@ -45,6 +54,7 @@ socket.onopen = function(event) {
                         A_temperatures.push(value2.Valeur);
                         Name_temperatures.push(value2.Nom);
                         T_temperatures.push(value2.type);
+                        addRowJson(value2);
                     }
                 }
             } //test
@@ -213,6 +223,33 @@ function randomNotification() {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
+    
+function addRowJson(data){
+    var today = new Date()
+
+    if(data.Nom == "Interieur"){
+        var temperature_interieur = {
+            "year" : today.getFullYear,
+            "month" : today.getMonth,
+            "day" : today.getDay,
+            "hour" : today.getHours,
+            "minutes" : today.getMinutes,
+            "seconds" : today.getSeconds,
+            "temperature" : data.Valeur,
+        }
+    }
+    else{
+        var temperature_exterior = {
+            "year" : today.getFullYear,
+            "month" : today.getMonth,
+            "day" : today.getDay,
+            "hour" : today.getHours,
+            "minutes" : today.getMinutes,
+            "seconds" : today.getSeconds,
+            "temperature" : data.Valeur,
+        }
+    }
+}
 
     
 
