@@ -1,0 +1,19 @@
+{
+    "temperature_interior":{
+        "year":,
+        "month":,
+        "day":,
+        "hour":,
+        "minutes",
+        "seconds",
+        "temperature":,
+
+    },
+    "temperature_exterior":{
+        "year":,
+        "month":,
+        "day":,
+        "time":,
+        "temperature":,
+    }
+}
