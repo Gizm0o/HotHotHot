@@ -259,7 +259,7 @@ function addToJson(data){
         obj.temperature_exterior.push({date: data.Date, temperature: data.Valeur})
     }
     var json = JSON.stringify(obj);
-    var fs = require('fs');
+    require(['fs'], function (fs) {});
     fs.writeFile('historique.json', json, 'utf8', callback);
     fs.readFile('historique.json', 'utf8', function readFileCallback(err, data){
         if (err){
