@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator){
     navigator.serviceWorker
-     .register('/serviceworker.js')
+     .register('../service-worker.js')
      .then(() => {console.log('Service Worker Registered'); 
     }).catch(err => {
         console.log('Service Worker Failed to Register', err);
@@ -33,6 +33,7 @@ socket.onopen = function(event) {
         var Name_temperatures = [];
         var T_temperatures = [];
         var object2 = JSON.parse(event.data);
+        
         (function() {
             
             for (var [key, value] of Object.entries(object2)) {
@@ -51,6 +52,35 @@ socket.onopen = function(event) {
             console.log(A_temperatures);
             console.log(Name_temperatures);
             console.log(T_temperatures);
+
+            const labels = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+              ];
+            
+              const data = {
+                labels: labels,
+                datasets: [{
+                  label: 'My First dataset',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: A_temperatures,
+                }]
+              };
+            
+              const config = {
+                type: 'line',
+                data: data,
+                options: {}
+              };
+              const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+              );
             
 
             var p_temperature = document.getElementById('p_temperature');
@@ -168,7 +198,7 @@ function randomNotification() {
 
             var notifTitle = "Chaud, non ?";
             var notifBody = 'Température : ' + randomNumber + '.';
-            var notifImg = '/img/logo_maison.png';
+            var notifImg = '../img/Logo_Hot.svg';
             var options = {
                 body: notifBody,
                 icon: notifImg
