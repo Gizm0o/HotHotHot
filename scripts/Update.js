@@ -1,4 +1,4 @@
-export {Observer} from './Observer.js';
+import {Observer} from './Observer.js';
 class UpdateObserver extends Observer {
     constructor() {
         super();
