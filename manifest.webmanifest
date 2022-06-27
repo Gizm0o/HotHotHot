@@ -5,10 +5,6 @@
 
     "description": "Project ",
 
-    "version": "1.0",
-
-    "type": "module",
-
 	"start_url": "www.besnard.tech",
 
     "display": "fullscreen",
