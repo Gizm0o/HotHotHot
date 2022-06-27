@@ -1,3 +1,4 @@
+import Observer from './Observer.js';
 class UpdateObserver extends Observer {
     constructor() {
         super();
