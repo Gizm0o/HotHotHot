@@ -3,4 +3,4 @@ class Observer {
     }
 }
 
-export default class {}
+export class Observer{}
