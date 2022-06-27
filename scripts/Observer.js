@@ -3,4 +3,4 @@ class Observer {
     }
 }
 
-export default Observer;
+export class Observer {update(data) {}}
