@@ -30,3 +30,5 @@ class UpdateObserver extends Observer {
         }
     }
 }
+
+export default UpdateObserver;
