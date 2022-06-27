@@ -17,7 +17,6 @@ socket.onopen = function(event) {
     setTimeout(function(){if (socket.readyState == 1){
         socket.send("coucou !");
         label.innerHTML = "Connexion établie";
-        anime.style.display ='block' ;
     }else{
         console.log("état socket.readyState");
         console.log(socket.readyState);

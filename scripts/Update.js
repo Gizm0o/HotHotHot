@@ -52,7 +52,7 @@ class UpdateObserver extends Observer {
             'June',
           ];
         
-          const data = {
+          const dato = {
             labels: labels,
             datasets: [{
               label: 'My First dataset',
@@ -64,7 +64,7 @@ class UpdateObserver extends Observer {
         
           const config = {
             type: 'line',
-            data: data,
+            data: dato,
             options: {}
           };
           const myChart = new Chart(
