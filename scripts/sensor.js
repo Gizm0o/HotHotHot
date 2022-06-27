@@ -47,3 +47,5 @@ class SubjectSensor {
         };
     }
 }
+
+export default SubjectSensor;
