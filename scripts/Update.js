@@ -133,3 +133,5 @@ class UpdateObserver extends Observer {
         }, 2000)
     }
 }
+
+export default UpdateObserver;
