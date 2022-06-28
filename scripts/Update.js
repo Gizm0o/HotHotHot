@@ -7,6 +7,20 @@ class UpdateObserver extends Observer {
         this.IntMaxTemp = document.getElementById("IntMaxTemp");
         this.IntMinTemp = document.getElementById("IntMinTemp"); 
     }
+
+
+
+    saveDataLocal(ExtMaxTemp, ExtMinTemp, IntMaxTemp, IntMinTemp) {
+        const data = {
+            ExtMaxTemp: ExtMaxTemp,
+            ExtMinTemp: ExtMinTemp,
+            IntMaxTemp: IntMaxTemp,
+            IntMinTemp: IntMinTemp
+        }
+        localStorage.setItem('Temp', JSON.stringify(data));
+    }
+
+
     update(data) {
         var A_temperatures = [];
         var Name_temperatures = [];
@@ -18,6 +32,8 @@ class UpdateObserver extends Observer {
 
         document.getElementById("ExtTemp").innerText = data.state[0].Valeur;
         document.getElementById("IntTemp").innerText = data.state[1].Valeur;
+
+        this.saveDataLocal(ExtMaxTempText, ExtMinTempText, IntMaxTempText, IntMinTempText);
 
         if (ExtMaxTempText < data.state[0].Valeur) {
             this.ExtMaxTemp.innerText = data.state[0].Valeur;
