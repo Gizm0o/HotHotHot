@@ -5,119 +5,125 @@ class UpdateObserver extends Observer {
         this.ExtMaxTemp = document.getElementById("ExtMaxTemp");
         this.ExtMinTemp = document.getElementById("ExtMinTemp");
         this.IntMaxTemp = document.getElementById("IntMaxTemp");
-        this.IntMinTemp = document.getElementById("IntMinTemp");
-        if ( localStorage.getItem('Temp') !== null ) {
-            this.getLocalData();
-        } 
+        this.IntMinTemp = document.getElementById("IntMinTemp"); 
     }
-
-
-    saveDataLocal(ExtMaxTemp, ExtMinTemp, IntMaxTemp, IntMinTemp) {
-        const data = {
-            ExtMaxTemp: ExtMaxTemp,
-            ExtMinTemp: ExtMinTemp,
-            IntMaxTemp: IntMaxTemp,
-            IntMinTemp: IntMinTemp
-        }
-        localStorage.setItem('Temp', JSON.stringify(data));
-    }
-
-    getLocalData() {
-        const data = JSON.parse(localStorage.getItem('Temp'));
-        this.ExtMaxTemp.innerText = data.ExtMaxTemp;
-        this.ExtMinTemp.innerText = data.ExtMinTemp;
-        this.IntMaxTemp.innerText = data.IntMaxTemp;
-        this.IntMinTemp.innerText = data.IntMinTemp;
-    }
-
     update(data) {
+        console.log(data);
+
         var A_temperatures = [];
         var Name_temperatures = [];
         var T_temperatures = [];
+
+        var object2 = data;
+        
+        for (var [key, value] of Object.entries(object2)) {
+                console.log(value);
+                if(key == "state"){
+                    for (var [key2, value2] of Object.entries(value)) {
+                        console.log(`${key2}: ${value2.Valeur}`);
+                        A_temperatures.push(value2.Valeur);
+                        Name_temperatures.push(value2.Nom);
+                        T_temperatures.push(value2.type);
+                    }
+                }
+            } //test
+        console.log(A_temperatures);
+        console.log(Name_temperatures);
+        console.log(T_temperatures);
+
 
         // const ExtMaxTempText = this.ExtMaxTemp.innerText;
         // const ExtMinTempText = this.ExtMinTemp.innerText;
         // const IntMaxTempText = this.IntMaxTemp.innerText;
         // const IntMinTempText = this.IntMinTemp.innerText;
-
+        
         // document.getElementById("ExtTemp").innerText = data.state[0].Valeur;
         // document.getElementById("IntTemp").innerText = data.state[1].Valeur;
 
-
         // if (ExtMaxTempText < data.state[0].Valeur) {
         //     this.ExtMaxTemp.innerText = data.state[0].Valeur;
-        //     A_temperatures.push(ExtMaxTemp);
-        //     Name_temperatures.push(ExtMaxTemp);
-        //     T_temperatures.push(ExtMaxTemp);
+
         // }
         // else if (ExtMinTempText > data.state[0].Valeur) {
         //     this.ExtMinTemp.innerText = data.state[0].Valeur;
-        //     A_temperatures.push(ExtMinTemp);
-        //     Name_temperatures.push(ExtMinTemp);
-        //     T_temperatures.push(ExtMinTemp);
+
         // }
 
         // if (IntMaxTempText < data.state[1].Valeur) {
         //     this.IntMaxTemp.innerText = data.state[1].Valeur;
-        //     A_temperatures.push(IntMaxTemp);
-        //     Name_temperatures.push(IntMaxTemp);
-        //     T_temperatures.push(IntMaxTemp);
+
         // }
         // else if (IntMinTempText > data.state[1].Valeur) {
         //     this.IntMinTemp.innerText = data.state[1].Valeur;
-        //     A_temperatures.push(IntMinTemp);
-        //     Name_temperatures.push(IntMinTemp);
-        //     T_temperatures.push(IntMinTemp);
+
         // }
-        A_temperatures.push(value2.Valeur);
-        Name_temperatures.push(value2.Nom);
-        T_temperatures.push(value2.type);
 
-        const labels = Utils.days({count: 7});
+        // const labels = [
+        //     'January',
+        //     'February',
+        //     'March',
+        //     'April',
+        //     'May',
+        //     'June',
+        //   ];
         
-          const dato = {
-            labels: labels,
-            datasets: [{
-              label: 'Real time',
-              data: A_temperatures,
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(201, 203, 207, 0.2)'
-              ],
-              borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(54, 162, 235)',
-                'rgb(153, 102, 255)',
-                'rgb(201, 203, 207)'
-              ],
-              borderWidth: 1
-            }]
-          };
+        //   const dato = {
+        //     labels: labels,
+        //     datasets: [{
+        //       label: 'My First dataset',
+        //       backgroundColor: 'rgb(255, 99, 132)',
+        //       borderColor: 'rgb(255, 99, 132)',
+        //       data: A_temperatures,
+        //     }]
+        //   };
         
-          const config = {
-            type: 'bar',
-            data: data,
-            options: {
-              scales: {
-                y: {
-                  beginAtZero: true
-                }
-              }
-            },
-          };
+        //   const config = {
+        //     type: 'line',
+        //     data: dato,
+        //     options: {}
+        //   };
+        //   const myChart = new Chart(
+        //     document.getElementById('myChart'),
+        //     config
+        //   );
+          
+        const labels = ['Intérieur',
+        'Extérieur'];
+    
+        const dato = {
+        labels: labels,
+        datasets: [{
+          label: 'Température',
+          data: A_temperatures,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(75, 192, 192, 0.2)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(75, 192, 192)'
+          ],
+          borderWidth: 1
+        }]
+      };
+    
+      const config = {
+        type: 'bar',
+        data: dato,
+        options: {
+            indexAxis:'y',
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        },
+      };
 
-          const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-          );
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
         
 
         var p_temperature = document.getElementById('p_temperature');

@@ -31,25 +31,25 @@ class NotificationObserver extends Observer {
 
     alertExt(data) {
         if (data < 0) {
-            this.notificationHandler('Alerte Intérieur : ' + val + '°C', 'Canalisation gelées, appelez SOS pompier et mettez un bonnet !');
+            this.notificationHandler('Alerte Intérieur : ' + data + '°C', 'Canalisation gelées, appelez SOS pompier et mettez un bonnet !');
         } 
-        else if (val < 12) {
-            this.notificationHandler('Alerte Intérieur : ' + val + '°C', 'Montez le chauffage ou mettez un gros pull !');
+        else if (data < 12) {
+            this.notificationHandler('Alerte Intérieur : ' + data + '°C', 'Montez le chauffage ou mettez un gros pull !');
         } 
-        else if (val > 22) {
-            this.notificationHandler('Alerte Intérieur : ' + val + '°C', 'Baissez le chauffage !');
+        else if (data > 22) {
+            this.notificationHandler('Alerte Intérieur : ' + data + '°C', 'Baissez le chauffage !');
         } 
-        else if (val > 50) {
-            this.notificationHandler('Alerte Intérieur : ' + val + '°C', 'Appelez les pompiers ou arrêtez votre barbecue !');
+        else if (data > 50) {
+            this.notificationHandler('Alerte Intérieur : ' + data + '°C', 'Appelez les pompiers ou arrêtez votre barbecue !');
         }
     }
 
     alertInt(data) {
         if (data < 0) {
-            this.notificationHandler('Alerte Extérieur : ' + val + '°C', 'Banquise en vue !');
+            this.notificationHandler('Alerte Extérieur : ' + data + '°C', 'Banquise en vue !');
         }
-        else if (val > 35) {
-            this.notificationHandler('Alerte Extérieur : ' + val + '°C', 'Hot Hot Hot !');
+        else if (data > 35) {
+            this.notificationHandler('Alerte Extérieur : ' + data + '°C', 'Hot Hot Hot !');
         }
     } 
 
