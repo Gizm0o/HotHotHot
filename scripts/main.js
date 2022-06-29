@@ -215,61 +215,62 @@ socket.onopen = function(event) {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
-    
-function addRowJson(data){
-    var today = new Date()
 
-    if(data.Nom == "Interieur"){
-        var temperature_interieur = {
-            "year" : today.getFullYear,
-            "month" : today.getMonth,
-            "day" : today.getDay,
-            "hour" : today.getHours,
-            "minutes" : today.getMinutes,
-            "seconds" : today.getSeconds,
-            "temperature" : data.Valeur,
-        }
-    }
-    else{
-        var temperature_exterior = {
-            "year" : today.getFullYear,
-            "month" : today.getMonth,
-            "day" : today.getDay,
-            "hour" : today.getHours,
-            "minutes" : today.getMinutes,
-            "seconds" : today.getSeconds,
-            "temperature" : data.Valeur,
-        }
-    }
-}
+// //JSON test
+// function addRowJson(data){
+//     var today = new Date()
+
+//     if(data.Nom == "Interieur"){
+//         var temperature_interieur = {
+//             "year" : today.getFullYear,
+//             "month" : today.getMonth,
+//             "day" : today.getDay,
+//             "hour" : today.getHours,
+//             "minutes" : today.getMinutes,
+//             "seconds" : today.getSeconds,
+//             "temperature" : data.Valeur,
+//         }
+//     }
+//     else{
+//         var temperature_exterior = {
+//             "year" : today.getFullYear,
+//             "month" : today.getMonth,
+//             "day" : today.getDay,
+//             "hour" : today.getHours,
+//             "minutes" : today.getMinutes,
+//             "seconds" : today.getSeconds,
+//             "temperature" : data.Valeur,
+//         }
+//     }
+// }
 
     
-function addToJson(data){
-    if(data.Nom == "Interieur"){
-        var obj = {
-            temperature_interior:[]
-        }
-        obj.temperature_interior.push({date: data.Date, temperature: data.Valeur})
-        }
-    else{
-        var obj = {
-            temperature_exterior:[]
-        }
-        obj.temperature_exterior.push({date: data.Date, temperature: data.Valeur})
-    }
-    var json = JSON.stringify(obj);
-    require(['fs'], function (fs) {});
-    fs.writeFile('historique.json', json, 'utf8', callback);
-    fs.readFile('historique.json', 'utf8', function readFileCallback(err, data){
-        if (err){
-            console.log(err);
-        } else {
-        obj = JSON.parse(data); //now it an object
-        obj.table.push({id: 2, square:3}); //add some data
-        json = JSON.stringify(obj); //convert it back to json
-        console.log(json); //see the output
-        fs.writeFile('historique.json', json, 'utf8', callback); // write it back 
-    }});
-}
+// function addToJson(data){
+//     if(data.Nom == "Interieur"){
+//         var obj = {
+//             temperature_interior:[]
+//         }
+//         obj.temperature_interior.push({date: data.Date, temperature: data.Valeur})
+//         }
+//     else{
+//         var obj = {
+//             temperature_exterior:[]
+//         }
+//         obj.temperature_exterior.push({date: data.Date, temperature: data.Valeur})
+//     }
+//     var json = JSON.stringify(obj);
+//     require(['fs'], function (fs) {});
+//     fs.writeFile('historique.json', json, 'utf8', callback);
+//     fs.readFile('historique.json', 'utf8', function readFileCallback(err, data){
+//         if (err){
+//             console.log(err);
+//         } else {
+//         obj = JSON.parse(data); //now it an object
+//         obj.table.push({id: 2, square:3}); //add some data
+//         json = JSON.stringify(obj); //convert it back to json
+//         console.log(json); //see the output
+//         fs.writeFile('historique.json', json, 'utf8', callback); // write it back 
+//     }});
+// }
 
 
