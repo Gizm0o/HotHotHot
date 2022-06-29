@@ -1,15 +1,22 @@
-
 var CACHE = 'hotcache';  
-
-
 
 // On install, cache some resource.  
 self.addEventListener('install', function(evt) {  
   evt.waitUntil(caches.open(CACHE).then(function (cache) {  
 	        cache.addAll([  
 	          "/index.html", 
+            "/index.js",
+            "/info.html",
             "/img/Logo_Hot.svg",
+            "/img/Couverture_Hot.svg",
+            "/img/favicon.png",
+            "/img/favicon.svg",
         "/scripts/main.js",
+        "/scripts/sensor.js",
+        "/scripts/Update.js",
+        "/scripts/Notifications.js",
+        "/scripts/Observer.js",
+        "/scripts/require.js",
         "/styles/style1.css",
 			  "/serviceworker.js",  
 	  ]);  

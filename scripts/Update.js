@@ -68,12 +68,12 @@ class UpdateObserver extends Observer {
             Name_temperatures.push(IntMinTemp);
             T_temperatures.push(IntMinTemp);
         }
-        const labels = Utils.months({count: 7});
+        const labels = Utils.days({count: 7});
         
           const dato = {
             labels: labels,
             datasets: [{
-              label: 'My First Dataset',
+              label: 'Real time',
               data: A_temperatures,
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
