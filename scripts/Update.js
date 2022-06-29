@@ -19,6 +19,11 @@ class UpdateObserver extends Observer {
         document.getElementById("ExtTemp").innerText = data.state[0].Valeur;
         document.getElementById("IntTemp").innerText = data.state[1].Valeur;
 
+        console.log(ExtMaxTempText);
+        console.log(ExtMinTempText);
+        console.log(IntMaxTempText);
+        console.log(IntMinTempText);
+
         if (ExtMaxTempText < data.state[0].Valeur) {
             this.ExtMaxTemp.innerText = data.state[0].Valeur;
             A_temperatures.push(ExtMaxTemp);

@@ -38,6 +38,7 @@ class SubjectSensor {
     socket() {
         this.socket = new WebSocket("wss://ws.hothothot.dog:9502");
         this.socket.onopen = () => {
+            console.log("Connexion établie");
             this.socket.send('hello world');
         };
         this.socket.onmessage = function(event) {

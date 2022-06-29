@@ -1,11 +1,11 @@
-// if ('serviceWorker' in navigator){
-//     navigator.serviceWorker
-//      .register('../serviceworker.js')
-//      .then(() => {console.log('Service Worker Registered'); 
-//     }).catch(err => {
-//         console.log('Service Worker Failed to Register', err);
-//     });
-// }
+if ('serviceWorker' in navigator){
+    navigator.serviceWorker
+     .register('../serviceworker.js')
+     .then(() => {console.log('Service Worker Registered'); 
+    }).catch(err => {
+        console.log('Service Worker Failed to Register', err);
+    });
+}
 
 // var socket = new WebSocket('wss://ws.hothothot.dog:9502');
 // socket.onopen = function(event) {
