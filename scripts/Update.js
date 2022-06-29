@@ -35,40 +35,45 @@ class UpdateObserver extends Observer {
         var A_temperatures = [];
         var Name_temperatures = [];
         var T_temperatures = [];
-        const ExtMaxTempText = this.ExtMaxTemp.innerText;
-        const ExtMinTempText = this.ExtMinTemp.innerText;
-        const IntMaxTempText = this.IntMaxTemp.innerText;
-        const IntMinTempText = this.IntMinTemp.innerText;
+
+        // const ExtMaxTempText = this.ExtMaxTemp.innerText;
+        // const ExtMinTempText = this.ExtMinTemp.innerText;
+        // const IntMaxTempText = this.IntMaxTemp.innerText;
+        // const IntMinTempText = this.IntMinTemp.innerText;
 
         document.getElementById("ExtTemp").innerText = data.state[0].Valeur;
         document.getElementById("IntTemp").innerText = data.state[1].Valeur;
 
 
-        if (ExtMaxTempText < data.state[0].Valeur) {
-            this.ExtMaxTemp.innerText = data.state[0].Valeur;
-            A_temperatures.push(ExtMaxTemp);
-            Name_temperatures.push(ExtMaxTemp);
-            T_temperatures.push(ExtMaxTemp);
-        }
-        else if (ExtMinTempText > data.state[0].Valeur) {
-            this.ExtMinTemp.innerText = data.state[0].Valeur;
-            A_temperatures.push(ExtMinTemp);
-            Name_temperatures.push(ExtMinTemp);
-            T_temperatures.push(ExtMinTemp);
-        }
+        // if (ExtMaxTempText < data.state[0].Valeur) {
+        //     this.ExtMaxTemp.innerText = data.state[0].Valeur;
+        //     A_temperatures.push(ExtMaxTemp);
+        //     Name_temperatures.push(ExtMaxTemp);
+        //     T_temperatures.push(ExtMaxTemp);
+        // }
+        // else if (ExtMinTempText > data.state[0].Valeur) {
+        //     this.ExtMinTemp.innerText = data.state[0].Valeur;
+        //     A_temperatures.push(ExtMinTemp);
+        //     Name_temperatures.push(ExtMinTemp);
+        //     T_temperatures.push(ExtMinTemp);
+        // }
 
-        if (IntMaxTempText < data.state[1].Valeur) {
-            this.IntMaxTemp.innerText = data.state[1].Valeur;
-            A_temperatures.push(IntMaxTemp);
-            Name_temperatures.push(IntMaxTemp);
-            T_temperatures.push(IntMaxTemp);
-        }
-        else if (IntMinTempText > data.state[1].Valeur) {
-            this.IntMinTemp.innerText = data.state[1].Valeur;
-            A_temperatures.push(IntMinTemp);
-            Name_temperatures.push(IntMinTemp);
-            T_temperatures.push(IntMinTemp);
-        }
+        // if (IntMaxTempText < data.state[1].Valeur) {
+        //     this.IntMaxTemp.innerText = data.state[1].Valeur;
+        //     A_temperatures.push(IntMaxTemp);
+        //     Name_temperatures.push(IntMaxTemp);
+        //     T_temperatures.push(IntMaxTemp);
+        // }
+        // else if (IntMinTempText > data.state[1].Valeur) {
+        //     this.IntMinTemp.innerText = data.state[1].Valeur;
+        //     A_temperatures.push(IntMinTemp);
+        //     Name_temperatures.push(IntMinTemp);
+        //     T_temperatures.push(IntMinTemp);
+        // }
+        A_temperatures.push(value2.Valeur);
+        Name_temperatures.push(value2.Nom);
+        T_temperatures.push(value2.type);
+
         const labels = Utils.days({count: 7});
         
           const dato = {
