@@ -12,7 +12,6 @@ class UpdateObserver extends Observer {
     }
 
 
-
     saveDataLocal(ExtMaxTemp, ExtMinTemp, IntMaxTemp, IntMinTemp) {
         const data = {
             ExtMaxTemp: ExtMaxTemp,
@@ -25,10 +24,10 @@ class UpdateObserver extends Observer {
 
     getLocalData() {
         const data = JSON.parse(localStorage.getItem('Temp'));
-        this.ExtMaxTemp.innerHTML = data.ExtMaxTemp;
-        this.ExtMinTemp.innerHTML = data.ExtMinTemp;
-        this.IntMaxTemp.innerHTML = data.IntMaxTemp;
-        this.IntMinTemp.innerHTML = data.IntMinTemp;
+        this.ExtMaxTemp.innerText = data.ExtMaxTemp;
+        this.ExtMinTemp.innerText = data.ExtMinTemp;
+        this.IntMaxTemp.innerText = data.IntMaxTemp;
+        this.IntMinTemp.innerText = data.IntMinTemp;
     }
 
     update(data) {
