@@ -3,14 +3,14 @@ import UpdateObserver from "./scripts/Update.js";
 import NotificationObserver from "./scripts/Notifications.js";
 
 
-//Subjects 
-const SubjectSensors = new SubjectSensor();
+// //Subjects 
+// const SubjectSensors = new SubjectSensor();
 
-//Observers
-const UpdateObservers = new UpdateObserver();
-const NotificationObservers = new NotificationObserver();
+// //Observers
+// const UpdateObservers = new UpdateObserver();
+// const NotificationObservers = new NotificationObserver();
 
 
 //Binding
-SubjectSensors.addObserver(UpdateObservers);
-SubjectSensors.addObserver(NotificationObservers);
+SubjectSensor.addObserver(UpdateObserver);
+SubjectSensor.addObserver(NotificationObserver);
