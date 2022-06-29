@@ -4,13 +4,13 @@ import NotificationObserver from "./scripts/Notifications";
 
 
 //Subjects 
-const SubjectSensor = new SubjectSensor();
+const SubjectSensors = new SubjectSensor();
 
 //Observers
-const UpdateObserver = new UpdateObserver();
-const NotificationObserver = new NotificationObserver();
+const UpdateObservers = new UpdateObserver();
+const NotificationObservers = new NotificationObserver();
 
 
 //Binding
-SubjectSensor.addObserver(UpdateObserver);
-SubjectSensor.addObserver(NotificationObserver);
+SubjectSensors.addObserver(UpdateObservers);
+SubjectSensors.addObserver(NotificationObservers);
