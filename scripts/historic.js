@@ -7,12 +7,12 @@ class Historic extends Observer {
         this.historic.innerHTML = "";
 
         if ( localStorage.getItem('historic') !== null ) {
-            getLocalData();
+            this.getLocalData();
         }
     }
 
     addRow(sensor) {
-        //TODO
+        
     }
 
     saveDataLocal(data) {
@@ -28,6 +28,14 @@ class Historic extends Observer {
             })
         });
         localStorage.setItem('historic',JSON.stringify(historic));
+    }
+
+    getLocalData() {
+        let historic = JSON.parse(localStorage.getItem('historic'));
+        historic.forEach(element => {
+            this.addRow(element);
+        }
+        );
     }
 
     update(data) {

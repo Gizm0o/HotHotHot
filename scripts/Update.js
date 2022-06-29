@@ -5,7 +5,10 @@ class UpdateObserver extends Observer {
         this.ExtMaxTemp = document.getElementById("ExtMaxTemp");
         this.ExtMinTemp = document.getElementById("ExtMinTemp");
         this.IntMaxTemp = document.getElementById("IntMaxTemp");
-        this.IntMinTemp = document.getElementById("IntMinTemp"); 
+        this.IntMinTemp = document.getElementById("IntMinTemp");
+        if ( localStorage.getItem('Temp') !== null ) {
+            this.getLocalData();
+        } 
     }
 
 
@@ -20,6 +23,13 @@ class UpdateObserver extends Observer {
         localStorage.setItem('Temp', JSON.stringify(data));
     }
 
+    getLocalData() {
+        const data = JSON.parse(localStorage.getItem('Temp'));
+        this.ExtMaxTemp.innerHTML = data.ExtMaxTemp;
+        this.ExtMinTemp.innerHTML = data.ExtMinTemp;
+        this.IntMaxTemp.innerHTML = data.IntMaxTemp;
+        this.IntMinTemp.innerHTML = data.IntMinTemp;
+    }
 
     update(data) {
         var A_temperatures = [];
