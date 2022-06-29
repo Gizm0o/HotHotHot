@@ -40,8 +40,8 @@ class UpdateObserver extends Observer {
         // const IntMaxTempText = this.IntMaxTemp.innerText;
         // const IntMinTempText = this.IntMinTemp.innerText;
 
-        document.getElementById("ExtTemp").innerText = data.state[0].Valeur;
-        document.getElementById("IntTemp").innerText = data.state[1].Valeur;
+        // document.getElementById("ExtTemp").innerText = data.state[0].Valeur;
+        // document.getElementById("IntTemp").innerText = data.state[1].Valeur;
 
 
         // if (ExtMaxTempText < data.state[0].Valeur) {
