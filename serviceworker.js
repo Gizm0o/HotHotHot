@@ -16,7 +16,6 @@ self.addEventListener('install', function(evt) {
         "/scripts/Update.js",
         "/scripts/Notifications.js",
         "/scripts/Observer.js",
-        "/scripts/require.js",
         "/styles/style1.css",
 			  "/serviceworker.js",  
 	  ]);  
