@@ -1,6 +1,6 @@
-import SubjectSensor from "./scripts/sensor";
-import UpdateObserver from "./scripts/Update";
-import NotificationObserver from "./scripts/Notifications";
+import SubjectSensor from "./scripts/sensor.js";
+import UpdateObserver from "./scripts/Update.js";
+import NotificationObserver from "./scripts/Notifications.js";
 
 
 //Subjects 
