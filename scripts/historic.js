@@ -4,7 +4,6 @@ class Historic extends Observer {
     constructor() {
         super();
         this.historic = document.getElementById("historic");
-        this.historic.innerHTML = "";
 
         if ( localStorage.getItem('historic') !== null ) {
             this.getLocalData();
