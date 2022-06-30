@@ -2,7 +2,6 @@ import SubjectSensor from "./scripts/sensor.js";
 import UpdateObserver from "./scripts/Update.js";
 import NotificationObserver from "./scripts/Notifications.js";
 import Historic from "./scripts/historic.js";
-import chart from "./scripts/chart.js";
 
 
 //Subjects 
