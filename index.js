@@ -17,7 +17,7 @@ const HistoricObservers = new Historic();
 //Binding
 SubjectSensors.attach(UpdateObservers);
 SubjectSensors.attach(NotificationObservers);
-SubjectSensor.attach(HistoricObservers);
+SubjectSensors.attach(HistoricObservers);
 
 
 chart();

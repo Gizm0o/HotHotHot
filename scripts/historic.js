@@ -1,4 +1,4 @@
-import Observer from "./Observer";
+import Observer from "./Observer.js";
 
 class Historic extends Observer {
     constructor() {
