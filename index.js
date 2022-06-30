@@ -19,5 +19,3 @@ SubjectSensors.attach(UpdateObservers);
 SubjectSensors.attach(NotificationObservers);
 SubjectSensors.attach(HistoricObservers);
 
-
-chart();
