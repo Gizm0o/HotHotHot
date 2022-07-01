@@ -183,6 +183,8 @@ button {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
+    top: auto;
+    bottom: 100px;
     border-radius: 30px;
     width: 20%;
     /* color: #f6e206; */

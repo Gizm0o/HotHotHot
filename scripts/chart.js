@@ -34,10 +34,12 @@ const myChart = new Chart(ctx, {
     }
 });
 
+var date = Date().toString();
+
 function getDays(data) {
     const days = [];
     for (let i = 0; i < data.length; i++) {
-        let day = data[i].Date.split('/')[0];
+        let day = data[i].date.split('/')[0];
         if (day[0] === "0") {
             day = day.substring(1);
         }
@@ -52,7 +54,7 @@ function getAverageValueForDayAndName(data, givenDay, name) {
     let sum = 0;
     let count = 0;
     data.forEach(element => {
-        let day = element.Date.split('/')[0];
+        let day = element.date.split('/')[0];
         if (day[0] === "0") {
             day = day.substring(1);
         }
@@ -70,7 +72,7 @@ function handler() {
         data.datasets[0].data = [];
         data.datasets[1].data = [];
         const historic = JSON.parse(localStorage.getItem("historic"));
-        historic.sort((a, b) => a.Date - b.Date);
+        historic.sort((a, b) => a.date - b.date);
         getDays(historic).forEach(day => {
             data.labels.push(day);
             data.datasets[0].data.push(getAverageValueForDayAndName(historic, day, "interieur"));

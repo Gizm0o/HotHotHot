@@ -63,9 +63,6 @@ class UpdateObserver extends Observer {
                 clone_real_ligne.style.visibility = "visible";
                 let div_real = document.querySelector("div");
 
-                div_real.appendChild(clone_real_ligne);
-                div_real.insertBefore(clone_real_ligne, div_real.querySelector("#real").nextSibling);
-
                 let clone_historique_ligne = document.getElementById("ligne_modele").cloneNode(true);
                 clone_historique_ligne.setAttribute("id", "");	
                 clone_historique_ligne.querySelector(".td_date").innerText = Date().toString();
