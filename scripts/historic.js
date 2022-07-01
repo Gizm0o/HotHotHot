@@ -15,6 +15,8 @@ class Historic extends Observer {
     }
 
     saveDataLocal(data) {
+        console.log(localStorage.getItem('historic'));
+        console.log(data);
         if ( localStorage.getItem('historic') == null ) {
             localStorage.setItem('historic',[]);
         }
@@ -30,6 +32,8 @@ class Historic extends Observer {
     }
 
     getLocalData() {
+        console.log(localStorage.getItem('historic'));
+        console.log(data);
         let historic = JSON.parse(localStorage.getItem('historic'));
         historic.forEach(element => {
             this.addRow(element);
