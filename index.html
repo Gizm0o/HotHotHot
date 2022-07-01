@@ -38,41 +38,48 @@
             </div>
         </header>
         
-        <div id="real" style="display:block">
+        <div id="real" style="display: block" >
             <br>
-            Vos Capteurs Temps Réel : 
+            <p id="titleCapt">Vos Capteurs en Temps Réel :</p>
             <br>
-
-            <div id="dataInt">Intérieur : </div>
-            <div id="dataExt">Extérieur : </div>
+            <div id="dataInfo">
+                <div id="dataIntInfo">Intérieur : </div>
+                <div id="dataExtInfo">Extérieur : </div>
+            </div>
+            <div id="dataAll">
+                <div id="dataInt"> </div>
+                <div id="dataExt"> </div>
+            </div>
 
         </div>
         <div id="histo" style="display:none">
             
             <br>
 
-            Votre Historique : 
+            <p id="titleCapt">Votre Historique : </p>
             <section>
-                <p id="p_temperature">Affichage de la température : <span id="span_temperature"></span></p>
+                <p id="p_temperature">Affichage des températures enregistrées : 
+                    <span id="span_temperature">
+                        <table>
+                            <tr><th colspan="4">Historique</th></tr>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Nom</th>
+                                <th>Température</th>
+                            </tr>
+                            <tr id="ligne_modele" class="tr_ligne">
+                                <td class="td_date"></td>
+                                <td class="td_type"></td>
+                                <td class="td_name"></td>
+                                <td class="td_temperature"></td>
+                            </tr>
+                        </table>
+            
+                        <canvas id="myChart" width="1000" height="1000"></canvas>
+                    </span>
+                </p>
             </section>
-    
-            <table>
-                <tr><th colspan="4">Historique</th></tr>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Nom</th>
-                    <th>Température</th>
-                </tr>
-                <tr id="ligne_modele" class="tr_ligne">
-                    <td class="td_date"></td>
-                    <td class="td_type"></td>
-                    <td class="td_name"></td>
-                    <td class="td_temperature"></td>
-                </tr>
-            </table>
-
-            <canvas id="myChart" width="1000" height="1000"></canvas>
 
         </div>
 
