@@ -20,7 +20,8 @@ class Historic extends Observer {
         if ( localStorage.getItem('historic') == null ) {
             localStorage.setItem('historic',[]);
         }
-        let historic = JSON.parse(localStorage.getItem('historic'));
+        // let historic = JSON.parse(localStorage.getItem('Historic'));
+        let historic = [];
         data.forEach(element => {
             historic.push({
                 Name : element.Name,
@@ -34,7 +35,8 @@ class Historic extends Observer {
     getLocalData() {
         console.log(localStorage.getItem('historic'));
         console.log(data);
-        let historic = JSON.parse(localStorage.getItem('historic'));
+        // let historic = JSON.parse(localStorage.getItem('historic'));
+        let historic = [];
         historic.forEach(element => {
             this.addRow(element);
         }
