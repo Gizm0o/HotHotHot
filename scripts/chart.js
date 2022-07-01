@@ -34,52 +34,52 @@ const myChart = new Chart(ctx, {
     }
 });
 
-function getDays(data) {
-    const days = [];
-    for (let i = 0; i < data.length; i++) {
-        let day = data[i].Date.split('/')[0];
-        if (day[0] === "0") {
-            day = day.substring(1);
-        }
-        if (!days.includes(day)) {
-            days.push(day);
-        }
-    }
-    return days;
-}
+// function getDays(data) {
+//     const days = [];
+//     for (let i = 0; i < data.length; i++) {
+//         let day = data[i].Date.split('/')[0];
+//         if (day[0] === "0") {
+//             day = day.substring(1);
+//         }
+//         if (!days.includes(day)) {
+//             days.push(day);
+//         }
+//     }
+//     return days;
+// }
 
-function getAverageValueForDayAndName(data, givenDay, name) {
-    let sum = 0;
-    let count = 0;
-    data.forEach(element => {
-        let day = element.Date.split('/')[0];
-        if (day[0] === "0") {
-            day = day.substring(1);
-        }
-        if (day === givenDay && element.Nom === name) {
-            sum += parseInt(element.Valeur);
-            count++;
-        }
-    });
-    return sum / count;
-}
+// function getAverageValueForDayAndName(data, givenDay, name) {
+//     let sum = 0;
+//     let count = 0;
+//     data.forEach(element => {
+//         let day = element.Date.split('/')[0];
+//         if (day[0] === "0") {
+//             day = day.substring(1);
+//         }
+//         if (day === givenDay && element.Nom === name) {
+//             sum += parseInt(element.Valeur);
+//             count++;
+//         }
+//     });
+//     return sum / count;
+// }
 
-function handler() {
-    if (localStorage.getItem("historic")) {
-        data.labels = [];
-        data.datasets[0].data = [];
-        data.datasets[1].data = [];
-        const historic = JSON.parse(localStorage.getItem("historic"));
-        historic.sort((a, b) => a.Date - b.Date);
-        getDays(historic).forEach(day => {
-            data.labels.push(day);
-            data.datasets[0].data.push(getAverageValueForDayAndName(historic, day, "interieur"));
-            data.datasets[1].data.push(getAverageValueForDayAndName(historic, day, "exterieur"));
-        });
+// function handler() {
+//     if (localStorage.getItem("historic")) {
+//         data.labels = [];
+//         data.datasets[0].data = [];
+//         data.datasets[1].data = [];
+//         const historic = JSON.parse(localStorage.getItem("historic"));
+//         historic.sort((a, b) => a.Date - b.Date);
+//         getDays(historic).forEach(day => {
+//             data.labels.push(day);
+//             data.datasets[0].data.push(getAverageValueForDayAndName(historic, day, "interieur"));
+//             data.datasets[1].data.push(getAverageValueForDayAndName(historic, day, "exterieur"));
+//         });
 
-        myChart.update();
-    }
-}
+//         myChart.update();
+//     }
+// }
 
-handler();
-let interval = setInterval(handler, 10000);
+// handler();
+// let interval = setInterval(handler, 10000);
