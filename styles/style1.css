@@ -309,15 +309,20 @@ button:hover {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
+    display: flex;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
+    align-items: center;
     align-self: auto;
+    align-content: center;
+    justify-content: space-around;
     margin-right: auto;
     margin-left: 20%;
     height: 100px;
     width: 100px;
     border: 2px solid #085dfc;
     border-radius: 15px;
+    font-size: 25px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 12px , rgba(0, 0, 0, 0.3) 0px 0px 7px ;
     transition: all 0.2s;
 }
@@ -333,15 +338,20 @@ button:hover {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
+    display: flex;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
+    align-items: center;
     align-self: auto;
+    align-content: center;
+    justify-content: space-around;
     margin-right: 20%;
     margin-left:auto;
     height: 100px;
     width: 100px;
     border: 2px solid #f60606;
     border-radius: 15px;
+    font-size: 25px;
     box-shadow: rgba(93, 50, 50, 0.25) 0px 0px 12px, rgba(0, 0, 0, 0.3) 0px 0px 7px;
     transition: all 0.2s;
 }
