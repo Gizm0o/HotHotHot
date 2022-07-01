@@ -1,5 +1,5 @@
 
-const labels = [];
+const labels = ['Intérieur', 'Extérieur'];
 const data = {
     labels: labels,
     datasets: [
