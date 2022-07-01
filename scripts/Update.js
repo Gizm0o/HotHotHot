@@ -47,29 +47,12 @@ class UpdateObserver extends Observer {
                 let IName_temperature = Name_temperatures[i];
 
                 
-                let color = 'blue';
-                if( 0 < I_temperature && I_temperature <= 20 ) {
-                    color = 'green';
-                }
-                else if( 20 < I_temperature && I_temperature <= 30 ) {
-                    color = 'orange';
-                }
-                else if( 30 < I_temperature && I_temperature <= 40 ) {
-                    color = 'red';
-                }
-                
                 ++i;
                 span_temperature.setAttribute("class", color);
                 span_temperature.innerText = I_temperature;
                 
                 let titre_message = document.createElement("h4")
                 titre_message.setAttribute('id', 'titre_message');
-                if( I_temperature < 0 ) {
-                    titre_message.innerText = 'Il fait froid';
-                } 
-                else if ( 30 < I_temperature ) {
-                    titre_message.innerText = 'Il fait chaud';
-                }
 
                 section.insertBefore(titre_message, p_temperature); 
 
@@ -83,6 +66,10 @@ class UpdateObserver extends Observer {
                 let table_tbody = document.querySelector("table tbody");
 
                 table_tbody.insertBefore(clone_historique_ligne, table_tbody.querySelector("#ligne_modele").nextSibling);
+
+                clone_historique_ligne.querySelector("#dataInt").innerText = I_temperature;
+                clone_historique_ligne.querySelector("#dataExt").innerText = I_temperature;
+
 
             } else {
                 clearInterval(interval);
