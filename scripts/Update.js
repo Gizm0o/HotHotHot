@@ -56,6 +56,16 @@ class UpdateObserver extends Observer {
 
                 section.insertBefore(titre_message, p_temperature); 
 
+                let clone_real_ligne = document.getElementById("real").cloneNode(true);
+                clone_real_ligne.setAttribute("id", "");
+                clone_real_ligne.querySelector("#dataInt").innerText = I_temperature;
+                clone_real_ligne.querySelector("#dataExt").innerText = I_temperature;
+                clone_real_ligne.style.visibility = "visible";
+                let div_real = document.querySelector("div");
+
+                div_real.appendChild(clone_real_ligne);
+                div_real.insertBefore(clone_real_ligne, div_real.querySelector("#real").nextSibling);
+
                 let clone_historique_ligne = document.getElementById("ligne_modele").cloneNode(true);
                 clone_historique_ligne.setAttribute("id", "");	
                 clone_historique_ligne.querySelector(".td_date").innerText = Date().toString();
@@ -66,9 +76,6 @@ class UpdateObserver extends Observer {
                 let table_tbody = document.querySelector("table tbody");
 
                 table_tbody.insertBefore(clone_historique_ligne, table_tbody.querySelector("#ligne_modele").nextSibling);
-
-                clone_historique_ligne.querySelector("#dataInt").innerText = I_temperature;
-                clone_historique_ligne.querySelector("#dataExt").innerText = I_temperature;
 
 
             } else {
