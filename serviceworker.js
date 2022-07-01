@@ -9,7 +9,6 @@ self.addEventListener('install', function(evt) {
             "/info.html",
             "/img/Logo_Hot.svg",
             "/img/Couverture_Hot.svg",
-            "/img/Couverture_hot.png",
             "/img/favicon.png",
             "/img/favicon.svg",
         "/scripts/main.js",
