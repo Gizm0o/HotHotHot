@@ -48,7 +48,7 @@ class UpdateObserver extends Observer {
 
                 
                 ++i;
-                span_temperature.setAttribute("class", color);
+                // span_temperature.setAttribute("class", color);
                 span_temperature.innerText = I_temperature;
                 
                 let titre_message = document.createElement("h4")
@@ -56,12 +56,14 @@ class UpdateObserver extends Observer {
 
                 section.insertBefore(titre_message, p_temperature); 
 
-                let clone_real_ligne = document.getElementById("real").cloneNode(true);
-                clone_real_ligne.setAttribute("id", "");
-                clone_real_ligne.querySelector("#dataInt").innerText = I_temperature;
-                clone_real_ligne.querySelector("#dataExt").innerText = I_temperature;
-                clone_real_ligne.style.visibility = "visible";
-                let div_real = document.querySelector("div");
+                if (IName_temperature == 'interieur') {
+                    var temp = document.getElementById('dataInt').innerText = I_temperature;
+                    alert(temp);
+                }else {
+                    var temp = document.getElementById('dataExt').innerText = I_temperature;
+                    alert(temp);
+                }
+                console.log(temp);
 
                 let clone_historique_ligne = document.getElementById("ligne_modele").cloneNode(true);
                 clone_historique_ligne.setAttribute("id", "");	
