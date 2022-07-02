@@ -1,14 +1,15 @@
 import SensorSubject from "./scripts/Sensor.js";
+import NavBarSubject from "./scripts/NavBar.js";
+
 import UpdateObserver from "./scripts/Update.js";
 import NotificationObserver from "./scripts/Notifications.js";
 import Historic from "./scripts/Historic.js";
-import NavBarSubject from "./scripts/NavBar.js";
-import SensorSubject from "./scripts/Sensor.js";
+import NavigationObserver from "./scripts/Navigation.js";
 
 
 //Subjects 
-const SensorSubject = new SensorSubject();
-const NavBarSubject = new NavBarSubject();
+const SensorSubjects = new SensorSubject();
+const NavBarSubjects = new NavBarSubject();
 
 //Observers
 const UpdateObservers = new UpdateObserver();
@@ -18,9 +19,9 @@ const NavigationObserver = new NavigationObserver();
 
 
 //Binding
-SensorSubject.subscribe(UpdateObservers);
-SensorSubject.subscribe(NotificationObservers);
-SensorSubject.subscribe(HistoricObservers);
+SensorSubjects.subscribe(UpdateObservers);
+SensorSubjects.subscribe(NotificationObservers);
+SensorSubjects.subscribe(HistoricObservers);
 
-NavBarSubject.subscribe(NavigationObserver);
+NavBarSubjects.subscribe(NavigationObserver);
 
