@@ -4,9 +4,9 @@ class NavigationObserver extends Observer {
 
     update() {
         document.querySelectorAll("#main section").forEach(section => 
-            section.removeAttribute("class"));
+            section.setAttribute("style", "display: none;"));
         document.querySelector("#main #${data.state}")
-            .setAttribute("class", "active");
+            .setAttribute("style", "display: block");
         }
     }
 
