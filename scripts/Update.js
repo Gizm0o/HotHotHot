@@ -29,10 +29,6 @@ class UpdateObserver extends Observer {
         console.log(Name_temperatures);
         console.log(T_temperatures);
 
-
-        var p_temperature = document.getElementById('p_temperature');
-        var section = p_temperature.parentNode;
-        var span_temperature =  document.getElementById('span_temperature');
         var i = 0;
 
         var interval = setInterval(function() {
@@ -40,18 +36,8 @@ class UpdateObserver extends Observer {
                 if(document.getElementById('titre_message'))
                     document.getElementById('titre_message').remove();
                     
-                let I_temperature = A_temperatures[i];
-                let IName_temperature = Name_temperatures[i];
-
-                
+                let I_temperature = A_temperatures[i];                
                 ++i;
-                // span_temperature.setAttribute("class", color);
-                span_temperature.innerText = I_temperature;
-                
-                let titre_message = document.createElement("h4")
-                titre_message.setAttribute('id', 'titre_message');
-
-                section.insertBefore(titre_message, p_temperature); 
 
                 if (IName_temperature == 'interieur') {
                     var temp = document.getElementById('dataInt').innerText = I_temperature;
