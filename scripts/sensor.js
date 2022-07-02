@@ -1,28 +1,15 @@
-class SubjectSensor {
-    state = {}
-    observers = []
+import Subject from './Subject';
+
+class SensorSubject extends Subject {
 
     constructor() {
+        super();
         this.socket = null 
         this.fetchData(this)
         let interval =  setInterval(this.fetchData,6000, ...[this])
     }
 
-    attach(observer) {
-        this.observers.push(observer);
-    }
-
-    detach(observer) {
-        const index = this.observers.indexOf(observer);
-
-        if (index > -1) {
-            this.observers.splice(index, 1);
-        }
-    }
-
-    notify() {
-        this.observers.forEach(observer => observer.update(this));
-    }
+    
 
     fetchData(object) {
         fetch("https://hothothot.dog/api/capteurs").then(data => {
@@ -49,4 +36,4 @@ class SubjectSensor {
     }
 }
 
-export default SubjectSensor;
+export default SensorSubject;

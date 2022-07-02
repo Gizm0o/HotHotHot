@@ -11,124 +11,79 @@
 
     </head>
     <body>
-        <header>
             <nav id="nav-bar">
-
-                <a class="home" href="https://www.besnard.tech"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                  </svg>  
-                </a>
-    
-                <!-- <h1 class ="title">HotHotHot</h1> -->
+                <div>
                 <img alt="HotHotHot" src="img/Couverture_Hot.svg" width="700" height="150" />
-    
-                <a class="info" href="https://www.besnard.tech/info.html"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
-                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                  </svg>  
-                </a>
-            
-            </nav>
-    
-    
-            <div class="container">
-                <button id="btn_real_time" onclick="realTime()">Capteurs Temps Réel</button>
-                <button id="btn_historic" onclick="historic()">Historique</button>
-            </div>
-        </header>
-        
-        <div id="real" style="display: block" >
-            <br>
-            <p id="titleCapt">Vos Capteurs en Temps Réel :</p>
-            <br>
-            <div id="dataInfo">
-                <div id="dataIntInfo">Intérieur : </div>
-                <div id="dataExtInfo">Extérieur : </div>
-            </div>
-            <div id="dataAll">
-                <div id="dataInt"> </div>
-                <div id="dataExt"> </div>
-            </div>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#sensors">Capteurs</a></li>
+                        <li><a href="#graph">Graphe</a></li>
+                        <li><a href="#historic">Historique</a></li>
+                        <li><a href="#about">À propos</a></li>
+                    </ul>
+                </div>
 
-        </div>
-        <div id="histo" style="display:none"> 
-            <p id="titleCapt">Votre Historique : </p>
-            <section id="historic">
-                        <table> 
-                            <tbody>
-                                <tr id="historic-table-row-title">
-                                    <td class="historic-table-cell-title">
-                                        <div id="historic-table-cell-temp">
-                                            <p>Temperature</p>
-                                        </div>
-                                    </td>
-                                    <td class="historic-table-cell-title">
-                                        <div id="historic-table-cell-sensor">
-                                            <p>Capteur</p>
-                                        </div>
-                                    </td>
-                                    <td class="historic-table-cell-title">
-                                        <div id="historic-table-cell-date">
-                                            <p>Date</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+            </nav>
+        <main id="main">
+            <section id="sensor">
+            <div id="real" style="display: block" >
+                <br>
+                <p id="titleCapt">Vos Capteurs en Temps Réel :</p>
+                <br>
+                <div id="dataInfo">
+                    <div id="dataIntInfo">Intérieur : </div>
+                    <div id="dataExtInfo">Extérieur : </div>
+                </div>
+                <div id="dataAll">
+                    <div id="dataInt"> </div>
+                    <div id="dataExt"> </div>
+                </div>
+            </div>
             </section>
-        </div>
+
+            <section id="historic">
+                <p id="titleCapt">Votre Historique : </p>
+                            <table> 
+                                <tbody>
+                                    <tr id="historic-table-row-title">
+                                        <td class="historic-table-cell-title">
+                                            <div id="historic-table-cell-temp">
+                                                <p>Temperature</p>
+                                            </div>
+                                        </td>
+                                        <td class="historic-table-cell-title">
+                                            <div id="historic-table-cell-sensor">
+                                                <p>Capteur</p>
+                                            </div>
+                                        </td>
+                                        <td class="historic-table-cell-title">
+                                            <div id="historic-table-cell-date">
+                                                <p>Date</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                </section>
+            
+            <section id="graph">
+            </section>
+                
+            <section id="about">
+
+            </section>
+        </main>
 
         <script>
-            let d1 = document.getElementById("real");
-            let d2 = document.getElementById("histo");
-            function realTime(){
-                // if(d1.style.display == "none"){
-                d1.style.display = "block";
-                d2.style.display = "none";
-                // } else {
-                // d1.style.display = "none";
-                // d2.style.display = "block";
-                // }
-            }
-
-            function historic(){
-            // if(d2.style.display == "none"){
-                d2.style.display = "block";
-                d1.style.display = "none";
-            // } else {
-            //     d2.style.display = "none";
-            //     d1.style.display = "block";
-            // }
-            }
+            defer
+            type ="module"
+            src="index.js" 
         </script>
-		
-
-        <p id='status'></p>
-        <code id='datas'></code>
-
-        <button id="notifications">Notifications</button>
-        <!-- <table border="1">
-            <tr><th colspan="2">Historique</th></tr>
-            <tr>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Nom</th>
-                <th>Température</th>
-            </tr>
-            <tr id="ligne_modele" class="tr_ligne">
-                <td class="td_date"></td>
-                <td class="td_type"></td>
-                <td class="td_name"></td>
-                <td class="td_temperature"></td>
-            </tr>
-        </table>
-
-        <canvas id="myChart" width="200" height="200"></canvas> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-        <script defer src="scripts/main.js"></script>
-        <script type="module" src="index.js"></script>
-        <script src="scripts/chart.js"></script>
+        <script>
+            defer
+            src="lib/serviceWorker.js"
+        </script>
 
     <template id="historic-table-row">
         <tr>

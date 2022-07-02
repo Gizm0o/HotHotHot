@@ -1,6 +1,6 @@
 import Observer from "./Observer.js";
 
-class Historic extends Observer {
+class HistoricObserver extends Observer {
     _callback
 
     set callback(value) {
@@ -65,4 +65,4 @@ class Historic extends Observer {
     }
 
 
-export default Historic;
+export default HistoricObserver;
