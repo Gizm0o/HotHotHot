@@ -48,6 +48,11 @@
                                 <tbody>
                                     <tr id="historic-table-row-title">
                                         <td class="historic-table-cell-title">
+                                            <div id="historic-table-cell-zone">
+                                                <p>Nom</p>
+                                            </div>
+                                        </td>
+                                        <td class="historic-table-cell-title">
                                             <div id="historic-table-cell-temp">
                                                 <p>Temperature</p>
                                             </div>
@@ -80,11 +85,13 @@
             src="index.js" 
         </script>
         <script>
+            defer
             src="scripts/main.js"
         </script>
 
     <template id="historic-table-row">
         <tr>
+            <td> Zone </td>
             <td> Temperature </td>
             <td> Capteur </td>
             <td> Date </td>
