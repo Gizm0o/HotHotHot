@@ -1,4 +1,4 @@
-import Subject from "./Subject";
+import Subject from "./Subject.js";
 
 class NavBarSubject extends Subject {
     constructor(){
