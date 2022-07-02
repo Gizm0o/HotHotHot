@@ -1,27 +1,40 @@
 import Observer from "./Observer.js";
 
 class Historic extends Observer {
+    _callback
+
+    set callback(value) {
+        this._callback = value;
+    }
+
     constructor() {
         super();
-        this.historic = document.getElementById("historic");
-
+        this.historicTableBody = document.querySelector('tbody');
+        this.historicTableTemplate = document.querySelector('#historic-table-template');
         if ( localStorage.getItem('historic') !== null ) {
             this.getLocalData();
         }
     }
 
     addRow(sensor) {
-        
+        let row = this.historicTableTemplate.cloneNode(true);
+        let cells = row.querySelectorAll('td');
+        cells[0].innerText = sensor.Valeur + '°C';
+        cells[1].innerText = sensor.Nom;
+        cells[2].innerText = sensor.Date.toLocaleString();
+        this.historicBody.appendChild(row);
+        if (this._callback) {
+            this._callback.notify();
+        }
     }
 
     saveDataLocal(data) {
         console.log(localStorage.getItem('historic'));
         console.log(data);
         if ( localStorage.getItem('historic') == null ) {
-            localStorage.setItem('historic',[]);
+            localStorage.setItem('historic','[]');
         }
-        // let historic = JSON.parse(localStorage.getItem('Historic'));
-        let historic = [];
+        let historic = JSON.parse(localStorage.getItem('historic'));
         data.forEach(element => {
             historic.push({
                 Name : element.Name,
@@ -35,17 +48,15 @@ class Historic extends Observer {
     getLocalData() {
         console.log(localStorage.getItem('historic'));
         console.log(data);
-        // let historic = JSON.parse(localStorage.getItem('historic'));
-        let historic = [];
+        let historic = JSON.parse(localStorage.getItem('historic'));
         historic.forEach(element => {
             this.addRow(element);
-        }
-        );
+        });
     }
 
     update(data) {
         data.state.forEach(sensor => {
-            sensor.Date = new Date(sensor.Date);
+            sensor.Date = new Date().toLocaleString;
             this.addRow(sensor);
         });
 

@@ -52,35 +52,31 @@
             </div>
 
         </div>
-        <div id="histo" style="display:none">
-            
-            <br>
-
+        <div id="histo" style="display:none"> 
             <p id="titleCapt">Votre Historique : </p>
-            <section>
-                <p id="p_temperature">Affichage des dernières températures enregistrées : 
-                    <span aria-live="assertive" aria-relevant="all" aria-atomic="false" id="span_temperature">
-                        <table>
-                            <tr><th colspan="4">Historique</th></tr>
-                            <tr>
-                                <th>Date</th>
-                                <th>Type</th>
-                                <th>Nom</th>
-                                <th>Température</th>
-                            </tr>
-                            <tr id="ligne_modele" class="tr_ligne">
-                                <td class="td_date"></td>
-                                <td class="td_type"></td>
-                                <td class="td_name"></td>
-                                <td class="td_temperature"></td>
-                            </tr>
+            <section id="historic">
+                        <table> 
+                            <tbody>
+                                <tr id="historic-table-row-title">
+                                    <td class="historic-table-cell-title">
+                                        <div id="historic-table-cell-temp">
+                                            <p>Temperature</p>
+                                        </div>
+                                    </td>
+                                    <td class="historic-table-cell-title">
+                                        <div id="historic-table-cell-sensor">
+                                            <p>Capteur</p>
+                                        </div>
+                                    </td>
+                                    <td class="historic-table-cell-title">
+                                        <div id="historic-table-cell-date">
+                                            <p>Date</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
-            
-                        <canvas id="myChart" width="1000" height="1000"></canvas>
-                    </span>
-                </p>
             </section>
-
         </div>
 
         <script>
@@ -133,6 +129,14 @@
         <script defer src="scripts/main.js"></script>
         <script type="module" src="index.js"></script>
         <script src="scripts/chart.js"></script>
+
+    <template id="historic-table-row">
+        <tr>
+            <td> Temperature </td>
+            <td> Capteur </td>
+            <td> Date </td>
+        </tr>
+    </template>    
 
     </body>
 
