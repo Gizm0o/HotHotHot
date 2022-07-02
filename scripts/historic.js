@@ -48,7 +48,6 @@ class HistoricObserver extends Observer {
 
     getLocalData() {
         console.log(localStorage.getItem('historic'));
-        console.log(data);
         let historic = JSON.parse(localStorage.getItem('historic'));
         historic.forEach(element => {
             this.addRow(element);
