@@ -1,9 +1,9 @@
-import SensorSubject from "./scripts/Sensor.js";
+import SensorSubject from "./scripts/sensor.js";
 import NavBarSubject from "./scripts/NavBar.js";
 
 import UpdateObserver from "./scripts/Update.js";
 import NotificationObserver from "./scripts/Notifications.js";
-import Historic from "./scripts/Historic.js";
+import Historic from "./scripts/historic.js";
 import NavigationObserver from "./scripts/Navigation.js";
 
 
