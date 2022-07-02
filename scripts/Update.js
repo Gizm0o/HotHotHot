@@ -2,11 +2,8 @@ import Observer from './Observer.js';
 class UpdateObserver extends Observer {
     constructor() {
         super();
-        this.ExtMaxTemp = document.getElementById("ExtMaxTemp");
-        this.ExtMinTemp = document.getElementById("ExtMinTemp");
-        this.IntMaxTemp = document.getElementById("IntMaxTemp");
-        this.IntMinTemp = document.getElementById("IntMinTemp"); 
     }
+
     update(data) {
         console.log(data);
 
@@ -26,7 +23,8 @@ class UpdateObserver extends Observer {
                         T_temperatures.push(value2.type);
                     }
                 }
-            } //test
+            } 
+
         console.log(A_temperatures);
         console.log(Name_temperatures);
         console.log(T_temperatures);
@@ -58,10 +56,8 @@ class UpdateObserver extends Observer {
 
                 if (IName_temperature == 'interieur') {
                     var temp = document.getElementById('dataInt').innerText = I_temperature;
-                    alert(temp);
                 }else {
                     var temp = document.getElementById('dataExt').innerText = I_temperature;
-                    alert(temp);
                 }
                 console.log(temp);
 
