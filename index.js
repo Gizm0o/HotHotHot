@@ -15,7 +15,7 @@ const NavBarSubjects = new NavBarSubject();
 const UpdateObservers = new UpdateObserver();
 const NotificationObservers = new NotificationObserver();
 const HistoricObservers = new Historic();
-const NavigationObserver = new NavigationObserver();
+const NavigationObservers = new NavigationObserver();
 
 
 //Binding
