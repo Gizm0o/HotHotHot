@@ -18,9 +18,9 @@ const NavigationObserver = new NavigationObserver();
 
 
 //Binding
-SensorSubject.attach(UpdateObservers);
-SensorSubject.attach(NotificationObservers);
-SensorSubject.attach(HistoricObservers);
+SensorSubject.subscribe(UpdateObservers);
+SensorSubject.subscribe(NotificationObservers);
+SensorSubject.subscribe(HistoricObservers);
 
-NavBarSubject.attach(NavigationObserver);
+NavBarSubject.subscribe(NavigationObserver);
 

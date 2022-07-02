@@ -54,6 +54,7 @@ class NotificationObserver extends Observer {
     } 
 
     update(data) {
+        log(data);
         let ExtTemp = data.state[0].Valeur;
         let IntTemp = data.state[1].Valeur;
         this.alertExt(ExtTemp);
