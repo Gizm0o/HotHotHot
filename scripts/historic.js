@@ -10,7 +10,7 @@ class HistoricObserver extends Observer {
     constructor() {
         super();
         this.historicTableBody = document.querySelector('tbody');
-        this.historicTableTemplate = document.querySelector('#historic-table-template');
+        this.historicTableTemplate = document.querySelector('#historicTableTemplate');
         if ( localStorage.getItem('historic') !== null ) {
             this.getLocalData();
         }
