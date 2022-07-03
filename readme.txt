@@ -3,14 +3,15 @@ https://www.besnard.tech/
 Fonctionnalités
 
 
-Mise en place d'un serveur pour ce projet 
+Mise en place d'un serveur personnel pour ce projet
 
 Affichage des données récupéré de l'API
 
 Historique des températures
 
-Système d'onglets
+Système d'onglets et d'alertes
 
 Implémentation d'un graphe
 
+Installation possible en PWA
 
