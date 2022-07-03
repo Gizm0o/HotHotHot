@@ -17,14 +17,15 @@
                 </div>
                 <div>
                     <ul>
-                        <li><a href="#sensors">Capteurs</a></li>
-                        <li><a href="#graph">Graphe</a></li>
-                        <li><a href="#historic">Historique</a></li>
-                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#sensors" onclick="realTime()">Capteurs</a></li>
+                        <li><a href="#graph" onclick="chart()">Graphe</a></li>
+                        <li><a href="#historic" onclick="historic()">Historique</a></li>
+                        <li><a href="#about" onclick="about()">À propos</a></li>
                     </ul>
                 </div>
 
             </nav>
+
         <main id="main">
             <section id="sensor" >
             <div id="real" style="display:block" >
@@ -42,7 +43,7 @@
             </div>
             </section>
 
-            <section id="historic">
+            <section id="historic" style="display:none">
                 <p id="titleCapt">Votre Historique : </p>
                             <table> 
                                 <tbody>
@@ -79,6 +80,36 @@
 
             </section>
         </main>
+        <script>
+            let d1 = document.getElementById("real");
+            let d2 = document.getElementById("historic");
+            let d3 = document.getElementById("graph");
+            let d4 = document.getElementById("about");
+            function realTime(){
+                d1.style.display = "block";
+                d2.style.display = "none";
+                d3.style.display = "none";
+                d4.style.display = "none";
+            }
+            function historic(){
+                d1.style.display = "none";
+                d2.style.display = "block";
+                d3.style.display = "none";
+                d4.style.display = "none";
+            }
+            function chart(){
+                d1.style.display = "none";
+                d2.style.display = "none";
+                d3.style.display = "block";
+                d4.style.display = "none";
+            }
+            function about(){
+                d1.style.display = "none";
+                d2.style.display = "none";
+                d3.style.display = "none";
+                d4.style.display = "block";
+            }
+        </script>
 
         <script
             type ="module"

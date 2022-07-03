@@ -306,7 +306,7 @@ button:hover {
     width: 100%;
 }
 
-#dataInt {
+#dataIntDiv {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -331,11 +331,11 @@ button:hover {
     transition: all 0.2s;
 }
 
-#dataInt:hover {
+#dataIntDiv:hover {
     box-shadow: rgba(1, 1, 255, 0.5) 0px 6px 15px , rgba(1, 1, 255, 0.5) 0px 0px 15px ;
 }
 
-#dataExt {
+#dataExtDiv {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -360,7 +360,7 @@ button:hover {
     transition: all 0.2s;
 }
 
-#dataExt:hover {
+#dataExtDiv:hover {
     box-shadow: rgba(255, 0, 0, 0.5) 0px 0px 15px , rgba(255, 0, 0, 0.5) 0px 0px 15px ;
 }
 
