@@ -13,4 +13,5 @@ Système d'onglets
 
 Implémentation d'un graphe
 
+Installation possible en PWA
 
