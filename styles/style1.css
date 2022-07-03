@@ -249,11 +249,23 @@ a:hover {
 
 #real {
     position: relative;
-    top: -20px;
+    top: 250px;
     width: 100%;
 }
 
-#histo {
+#histori {
+    position: relative;
+    top: 250px;
+    width: 100%;
+}
+
+#graphs {
+    position: relative;
+    top: 250px;
+    width: 100%;
+}
+
+#abouts {
     position: relative;
     top: 250px;
     width: 100%;

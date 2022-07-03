@@ -38,6 +38,8 @@ class HistoricObserver extends Observer {
             historic.push({
                 Name : element.Name,
                 Value : element.Value,
+                Type : element.Type,
+                Date : Date().toString(),
             })
         });
         localStorage.setItem('historic',JSON.stringify(historic));
@@ -53,7 +55,6 @@ class HistoricObserver extends Observer {
 
     update(data) {
         data.state.forEach(sensor => {
-            sensor.Date = new Date().toLocaleString;
             this.addRow(sensor);
         });
 
