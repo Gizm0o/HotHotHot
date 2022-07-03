@@ -3,7 +3,7 @@ https://www.besnard.tech/
 Fonctionnalités
 
 
-Mise en place d'un serveur pour ce projet 
+Mise en place d'un serveur personnel pour ce projet
 
 Affichage des données récupéré de l'API
 
