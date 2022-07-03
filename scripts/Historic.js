@@ -39,7 +39,7 @@ class HistoricObserver extends Observer {
                 Name : element.Name,
                 Value : element.Value,
                 Type : element.Type,
-                Date : Date().toString(),
+                Date : Date().toString()
             })
         });
         localStorage.setItem('historic',JSON.stringify(historic));
