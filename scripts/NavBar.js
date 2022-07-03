@@ -6,7 +6,7 @@ class NavBarSubject extends Subject {
         document.querySelectorAll("nav a").forEach(link => {
             link.addEventListener("click", (event) => {
                 event.preventDefault();
-                this.state = event.target.attributes.href.value.replace("#", "");
+                // this.state = event.target.attributes.href.value.replace("#", ""); 
                 this.notify();
             })
         });

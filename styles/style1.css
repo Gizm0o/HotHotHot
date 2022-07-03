@@ -2,7 +2,7 @@
     font-family: Consolas, monaco, monospace;
 }
 
-ul a {
+a {
     
     text-decoration: none;
 }
@@ -96,10 +96,6 @@ nav {
     transform: scale(1.3);
     background-color: #fc3508;
     box-shadow: 0px 0px 10px red;
-}
-
-nav a:link {
-    text-decoration: none;
 }
 
 .container {
@@ -241,7 +237,7 @@ button {
     transition: 0.2s;
 }
 
-a:hover {
+li:hover {
     color: #fff;
     background-color: #fc3508;
     box-shadow: 0px 0px 20px red;
