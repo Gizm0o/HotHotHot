@@ -3,17 +3,15 @@ class UpdateObserver extends Observer {
     constructor() {
         super();
 
-        this.ExtTemp = document.getElementById('dataExtDiv');
-        this.IntTemp = document.getElementById('dataIntDiv');
         if(localStorage.getItem('Temp') != null) {
             this.getLocalData();
         }
     }
 
-    saveDataLocal(ExtTemp, IntTemp) {
-        const data = {
-            ExtTemp: ExtTemp,
-            IntTemp: IntTemp
+    saveDataLocal(data) {
+        const values = {
+            ExtTemp: data.state[1].Valeur,
+            IntTemp: data.state[0].Valeur
             
         }
         localStorage.setItem('Temp', JSON.stringify(data));
@@ -28,10 +26,10 @@ class UpdateObserver extends Observer {
     update(data) {
         console.log(data);
 
-        document.getElementById('dataExtDiv').innerText = data.ExtTemp;
-        document.getElementById('dataIntDiv').innerText = data.IntTemp;
+        document.getElementById('dataExtDiv').innerText = data.state[1].Valeur;
+        document.getElementById('dataIntDiv').innerText = data.state[0].Valeur;
 
-        this.saveDataLocal(data.ExtTemp, data.IntTemp);
+        this.saveDataLocal(data);
     }
 }
 
