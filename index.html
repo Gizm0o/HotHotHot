@@ -15,16 +15,17 @@
                 <div>
                 <img alt="HotHotHot" src="img/Couverture_Hot.svg" width="700" height="150" />
                 </div>
-                <div>
-                    <ul>
-                        <li><a href="#sensors" onclick="realTime()">Capteurs</a></li>
-                        <li><a href="#graph" onclick="chart()">Graphe</a></li>
-                        <li><a href="#historic" onclick="historic()">Historique</a></li>
-                        <li><a href="#about" onclick="about()">À propos</a></li>
-                    </ul>
-                </div>
+
 
             </nav>
+            <div>
+                <ul class="container">
+                    <li id="sensors"><a href="#sensors" onclick="realTime()">Capteurs </a></li>
+                    <li id="graphs"><a href="#graph" onclick="chart()">Graphe</a></li>
+                    <li id="histori"><a href="#historic" onclick="historic()">Historique</a></li>
+                    <li id="abouts"><a href="#about" onclick="about()">À propos</a></li>
+                </ul>
+            </div>
 
         <main id="main">
             <section id="sensor" >
@@ -73,10 +74,11 @@
                             </table>
                 </section>
             
-            <section id="graph">
+            <section id="graph" style="display:none">
+                <canvas id="myChart" width="1000" height="1000"></canvas>
             </section>
                 
-            <section id="about">
+            <section id="about" style="display:none">
 
             </section>
         </main>
