@@ -11,7 +11,6 @@ self.addEventListener('install', function(evt) {
             "/img/Couverture_Hot.svg",
             "/img/favicon.png",
             "/img/favicon.svg",
-        "/scripts/chart.js",
         "/scripts/Historic.js",
         "/scripts/Serviceworker.js",
         "/scripts/NavBar.js",
