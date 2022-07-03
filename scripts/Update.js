@@ -97,22 +97,22 @@ class UpdateObserver extends Observer {
                 ++i;
 
                 if (IName_temperature == 'interieur') {
-                    var temp = document.getElementById('dataInt').innerText = I_temperature;
+                    var temp = document.getElementById('dataIntDiv').innerText = I_temperature;
                 }else {
-                    var temp = document.getElementById('dataExt').innerText = I_temperature;
+                    var temp = document.getElementById('dataExtDiv').innerText = I_temperature;
                 }
                 console.log(temp);
 
-                let clone_historique_ligne = document.getElementById("ligne_modele").cloneNode(true);
+                let clone_historique_ligne = document.getElementById("historic-table-row-title").cloneNode(true);
                 clone_historique_ligne.setAttribute("id", "");	
-                clone_historique_ligne.querySelector(".td_date").innerText = Date().toString();
-                clone_historique_ligne.querySelector(".td_type").innerText = IT_temperature;
-                clone_historique_ligne.querySelector(".td_name").innerText = IName_temperature;
-                clone_historique_ligne.querySelector(".td_temperature").innerText = I_temperature;
+                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = Date().toString();
+                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = IT_temperature;
+                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = IName_temperature;
+                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = I_temperature;
                 clone_historique_ligne.style.visibility = "visible";
                 let table_tbody = document.querySelector("table tbody");
 
-                table_tbody.insertBefore(clone_historique_ligne, table_tbody.querySelector("#ligne_modele").nextSibling);
+                table_tbody.insertBefore(clone_historique_ligne, table_tbody.querySelector("#historic-table-row-title").nextSibling);
 
             } 
             else {
