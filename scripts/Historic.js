@@ -21,6 +21,8 @@ class HistoricObserver extends Observer {
         let cells = clonedRow.querySelectorAll('td');
         cells[0].innerText = sensor.Nom;
         cells[1].innerText = sensor.Valeur + '°C';
+        cells[2].innerText = sensor.type;
+        cells[3].innerText = Date().toString();
         this.historicTableBody.appendChild(clonedRow);
         if (this._callback) {
             this._callback.notify();
@@ -38,7 +40,7 @@ class HistoricObserver extends Observer {
             historic.push({
                 Name : element.Name,
                 Value : element.Value,
-                Type : element.Type,
+                Type : element.type,
                 Date : Date().toString()
             })
         });
