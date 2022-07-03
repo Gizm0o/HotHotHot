@@ -92,6 +92,7 @@ class UpdateObserver extends Observer {
                 if(document.getElementById('titre_message'))
                     document.getElementById('titre_message').remove();
 
+                let IT_temperature = T_temperatures[i];
                 let I_temperature = A_temperatures[i]; 
                 let IName_temperature = Name_temperatures[i];               
                 ++i;
@@ -107,8 +108,6 @@ class UpdateObserver extends Observer {
                 clone_historique_ligne.setAttribute("id", "");	
                 clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = Date().toString();
                 clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = IT_temperature;
-                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = IName_temperature;
-                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = I_temperature;
                 clone_historique_ligne.style.visibility = "visible";
                 let table_tbody = document.querySelector("table tbody");
 
