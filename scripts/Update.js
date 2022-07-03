@@ -106,8 +106,8 @@ class UpdateObserver extends Observer {
 
                 let clone_historique_ligne = document.getElementById("historic-table-row-title").cloneNode(true);
                 clone_historique_ligne.setAttribute("id", "");	
-                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = Date().toString();
-                clone_historique_ligne.querySelector(".historic-table-cell-title").innerText = IT_temperature;
+                clone_historique_ligne.querySelector("#historic-table-cell-sensor").innerText = Date().toString();
+                clone_historique_ligne.querySelector("#historic-table-cell-date").innerText = IT_temperature;
                 clone_historique_ligne.style.visibility = "visible";
                 let table_tbody = document.querySelector("table tbody");
 
