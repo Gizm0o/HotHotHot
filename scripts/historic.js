@@ -22,7 +22,7 @@ class HistoricObserver extends Observer {
         cells[0].innerText = sensor.Nom;
         cells[1].innerText = sensor.Valeur + '°C';
         cells[2].innerText = sensor.Type;
-        cells[3].innerText = sensor.Date.toLocaleString();
+        cells[3].innerText = sensor.Date ? sensor.Date : new Date().toLocaleString();
         this.historicTableBody.appendChild(clonedRow);
         if (this._callback) {
             this._callback.notify();

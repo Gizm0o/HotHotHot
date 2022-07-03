@@ -14,6 +14,7 @@ class UpdateObserver extends Observer {
         const data = {
             ExtTemp: ExtTemp,
             IntTemp: IntTemp
+            
         }
         localStorage.setItem('Temp', JSON.stringify(data));
     }
