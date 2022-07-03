@@ -3,8 +3,8 @@ class UpdateObserver extends Observer {
     constructor() {
         super();
 
-        this.ExtTemp = document.getElementById('dataExt');
-        this.IntTemp = document.getElementById('dataInt');
+        this.ExtTemp = document.getElementById('dataExtDiv');
+        this.IntTemp = document.getElementById('dataIntDiv');
         if(localStorage.getItem('Temp') != null) {
             this.getLocalData();
         }
@@ -28,10 +28,9 @@ class UpdateObserver extends Observer {
     update(data) {
         console.log(data);
 
-        const ExtTemp = this.ExtTemp.innerText;
-        const IntTemp = this.IntTemp.innerText;
-        this.ExtTemp.innerText = data.ExtTemp;
-        this.IntTemp.innerText = data.IntTemp;
+        document.getElementById('dataExtDiv').innerText = data.ExtTemp;
+        document.getElementById('dataIntDiv').innerText = data.IntTemp;
+
         this.saveDataLocal(data.ExtTemp, data.IntTemp);
     }
 }
