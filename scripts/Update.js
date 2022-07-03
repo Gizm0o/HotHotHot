@@ -92,7 +92,6 @@ class UpdateObserver extends Observer {
                 if(document.getElementById('titre_message'))
                     document.getElementById('titre_message').remove();
 
-                let IT_temperature = T_temperatures[i];
                 let I_temperature = A_temperatures[i]; 
                 let IName_temperature = Name_temperatures[i];               
                 ++i;

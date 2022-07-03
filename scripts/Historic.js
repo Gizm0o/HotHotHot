@@ -54,9 +54,7 @@ class HistoricObserver extends Observer {
     }
 
     update(data) {
-        data.state.forEach(sensor => {
-            this.addRow(sensor);
-        });
+
 
         this.saveDataLocal(data.state);
         }
