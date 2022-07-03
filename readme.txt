@@ -9,7 +9,7 @@ Affichage des données récupéré de l'API
 
 Historique des températures
 
-Système d'onglets
+Système d'onglets et d'alertes
 
 Implémentation d'un graphe
 
