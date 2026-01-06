@@ -1,4 +1,3 @@
-https://www.besnard.tech/
 
 Fonctionnalités
 
